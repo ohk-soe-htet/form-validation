@@ -1,15 +1,17 @@
-import Form from "./components/basic/ReducerForm";
-import Basic from "./components/formik/BasicForm";
-// import SimpleInput from "./components/basic/SimpleInput";
-// import BasicForm from "./components/basic/BasicForm";
+import BasicForm from "./components/Native/BasicForm";
+import ReducerForm from "./components/Native/ReducerForm";
+import ComponentForm from "./components/Formik/ComponentForm";
+import HookForm from "./components/Formik/HookForm";
+import CompWithHookForm from "./components/Formik/CompWithHookForm";
 
 const App = () => {
     return (
         <div className="app">
-            {/* <Form /> */}
-            <Basic />
-            {/* <SimpleInput /> */}
             {/* <BasicForm /> */}
+            {/* <ReducerForm /> */}
+            {/* <ComponentForm /> */}
+            {/* <HookForm /> */}
+            <CompWithHookForm />
         </div>
     );
 };

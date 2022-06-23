@@ -1,101 +1,150 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: "Noto Sans JP", sans-serif;
+*,
+*::before,
+*::before {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    background-color: #3f3f3f;
+    background: #0e101c;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
 }
 
-.app {
-    width: 90%;
-    max-width: 43rem;
-    padding: 1rem;
-    border-radius: 12px;
-    background-color: white;
-    margin: 3rem auto;
+form {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.form-control {
-    margin-bottom: 1rem;
+h1 {
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(79, 98, 148);
 }
 
-.form-control input,
-.form-control label {
+.form {
+    background: #0e101c;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+p {
+    color: #bf1650;
+    height: 20px;
+    line-height: 20px;
+}
+
+p::before {
+    display: inline;
+    content: "⚠ ";
+}
+
+input {
     display: block;
-}
-
-.form-control label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.form-control input,
-.form-control select {
-    font: inherit;
-    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.form-control input:focus {
-    outline: none;
-    border-color: #240370;
-    background-color: #e0d4fd;
+label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
 }
 
-.control-group {
-    display: flex;
-    column-gap: 1rem;
-    flex-wrap: wrap;
+button[type="submit"],
+input[type="submit"] {
+    background: #ec5990;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
 }
 
-.control-group .form-control {
-    min-width: 15rem;
-    flex: 1;
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    background: #bf1650;
+}
+
+button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+}
+
+input:disabled {
+    opacity: 0.4;
+}
+
+input[type="button"]:hover {
+    transition: 0.3s all;
+}
+
+button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+    -webkit-appearance: none;
+}
+
+.App {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button[type="button"] {
+    display: block;
+    appearance: none;
+    background: #333;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+pre {
+    color: white;
+}
+
+hr {
+    margin-top: 30px;
 }
 
 button {
-    font: inherit;
-    background-color: #240370;
-    color: white;
-    border: 1px solid #240370;
-    padding: 0.5rem 1.5rem;
+    display: block;
+    appearance: none;
+    margin-top: 20px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
     border-radius: 4px;
-    cursor: pointer;
 }
 
-button:hover,
-button:active {
-    background-color: #33059e;
-    border-color: #33059e;
+.empty-div {
+    height: 20px;
 }
 
-button:disabled,
-button:disabled:hover,
-button:disabled:active {
-    background-color: #ccc;
-    color: #292929;
-    border-color: #ccc;
-    cursor: not-allowed;
-}
-
-.form-actions {
-    text-align: right;
-}
-
-.form-actions button {
-    margin-left: 1rem;
-}
-
+/* For native form error */
 .invalid input {
     border: 1px solid #b40e0e;
     background-color: #fddddd;

@@ -13,7 +13,7 @@ const inputStateReducer = (state, action) => {
     return;
 };
 
-const Form = () => {
+const ReducerForm = () => {
     const [inputState, dispatchInputState] = useReducer(inputStateReducer, {
         value: "",
         isTouched: false,
@@ -47,32 +47,26 @@ const Form = () => {
             return;
         }
 
-        console.log(inputState.value);
+        alert(inputState.value);
         reset();
     };
 
-    const inputClasses = hasError ? "form-control invalid" : "form-control";
-
     return (
         <form onSubmit={sumbitHandler}>
-            <div className={inputClasses}>
-                <label htmlFor="name">Your Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    onChange={inpChangeHandler}
-                    onBlur={inpBlurHandler}
-                    value={inputState.value}
-                />
-                {hasError && (
-                    <p className="error-text">Name must not be empty.</p>
-                )}
-            </div>
-            <div className="form-actions">
-                <button disabled={!formIsValid}>Submit</button>
-            </div>
+            <label htmlFor="name">Your Name</label>
+            <input
+                type="text"
+                name="name"
+                onChange={inpChangeHandler}
+                onBlur={inpBlurHandler}
+                value={inputState.value}
+            />
+            {hasError ? <p>Name must not be empty.</p> : <EmptyDiv />}
+            <button type="submit" disabled={!formIsValid}>
+                Submit
+            </button>
         </form>
     );
 };
 
-export default Form;
+export default ReducerForm;
