@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import { nativeValidate, yupSchema } from "../../hooks/validate";
 import EmptyDiv from "../UI/EmptyDiv";
 
-// Create empty context
 const FormikContext = createContext({});
 
 // Place all of what’s returned by useFormik into context
@@ -18,12 +17,13 @@ const Formik = ({ children, ...props }) => {
     );
 };
 
+// no autocomplete or intellisense
 const CompWithHookForm = () => {
     return (
         <Formik
             initialValues={{ firstName: "", lastName: "", email: "" }}
-            validate={nativeValidate}
-            // validationSchema={yupSchema}
+            // validate={nativeValidate}
+            validationSchema={yupSchema}
             onSubmit={(values, { setSubmitting }) => {
                 alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);

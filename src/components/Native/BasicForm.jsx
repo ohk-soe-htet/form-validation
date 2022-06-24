@@ -4,7 +4,7 @@ import EmptyDiv from "../UI/EmptyDiv";
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
 
-const BasicForm = (props) => {
+const BasicForm = () => {
     const {
         value: firstNameValue,
         isValid: firstNameIsValid,

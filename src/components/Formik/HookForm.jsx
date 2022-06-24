@@ -1,8 +1,5 @@
 import { useFormik } from "formik";
-import * as yup from "yup";
-
-import { nativeValidate } from "../../hooks/validate";
-import { yupSchema } from "../../hooks/validate";
+import { nativeValidate, yupSchema } from "../../hooks/validate";
 import EmptyDiv from "../UI/EmptyDiv";
 
 const HookForm = () => {

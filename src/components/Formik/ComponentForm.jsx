@@ -1,11 +1,12 @@
 // Render Prop
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { nativeValidate } from "../../hooks/validate";
+import { nativeValidate, yupSchema } from "../../hooks/validate";
 
 const ComponentForm = () => (
     <Formik
         initialValues={{ firstName: "", lastName: "", email: "" }}
-        validate={nativeValidate}
+        // validate={nativeValidate}
+        validationSchema={yupSchema}
         onSubmit={(values, { setSubmitting }) => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
