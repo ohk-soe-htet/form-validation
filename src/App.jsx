@@ -8,12 +8,12 @@ import Basic from "./components/ReactHookForm/Basic";
 const App = () => {
     return (
         <div className="app">
-            <BasicForm />
+            {/* <BasicForm /> */}
             {/* <ReducerForm /> */}
             {/* <ComponentForm /> */}
             {/* <HookForm /> */}
             {/* <CompWithHookForm /> */}
-            {/* <Basic /> */}
+            <Basic />
         </div>
     );
 };

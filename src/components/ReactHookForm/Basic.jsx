@@ -1,29 +1,36 @@
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { yupSchema } from "../../hooks/validate";
+import EmptyDiv from "../UI/EmptyDiv";
 
-const Basic = () => {
+export default function Basic() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
-    } = useForm();
-    const onSubmit = (data) => console.log(data);
-
-    console.log(watch("example")); // watch input value by passing the name of it
+    } = useForm({
+        resolver: yupResolver(yupSchema),
+    });
+    const onSubmit = (data) => alert(JSON.stringify(data));
 
     return (
-        /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <form onSubmit={handleSubmit(onSubmit)}>
-            {/* register your input into the hook by invoking the "register" function */}
-            <input {...register("example")} />
-            {/* include validation with required or other standard HTML validation rules */}
-            <input {...register("exampleRequired", { required: true })} />
-            {/* errors will return when field validation fails  */}
-            {errors.exampleRequired && <span>This field is required</span>}
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" id="firstName" {...register("firstName")} />
+            {errors.firstName ? (
+                <p>{errors.firstName.message}</p>
+            ) : (
+                <EmptyDiv />
+            )}
 
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" id="lastName" {...register("lastName")} />
+            {errors.lastName ? <p>{errors.lastName.message}</p> : <EmptyDiv />}
+
+            <label htmlFor="email">Email</label>
+            <input {...register("email")} />
+            {errors.email ? <p>{errors.email.message}</p> : <EmptyDiv />}
             <input type="submit" />
         </form>
     );
-};
-
-export default Basic;
+}
