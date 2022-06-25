@@ -15,15 +15,15 @@ const ComponentForm = () => (
         {({ isSubmitting }) => (
             <Form style={{ display: "flex", flexDirection: "column" }}>
                 <label htmlFor="firstName">First Name</label>
-                <Field type="text" name="firstName" />
+                <Field type="text" name="firstName" id="firstName" />
                 <ErrorMessage name="firstName" component="p" />
 
                 <label htmlFor="lastName">Last Name</label>
-                <Field type="text" name="lastName" />
+                <Field type="text" name="lastName" id="lastName" />
                 <ErrorMessage name="lastName" component="p" />
 
                 <label htmlFor="email">Email</label>
-                <Field type="email" name="email" />
+                <Field type="email" name="email" id="email" />
                 <ErrorMessage name="email" component="p" />
 
                 <button type="submit" disabled={isSubmitting}>

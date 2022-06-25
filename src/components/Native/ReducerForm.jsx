@@ -57,6 +57,7 @@ const ReducerForm = () => {
             <input
                 type="text"
                 name="name"
+                id="name"
                 onChange={inpChangeHandler}
                 onBlur={inpBlurHandler}
                 value={inputState.value}

@@ -20,6 +20,7 @@ const HookForm = () => {
             <label htmlFor="firstName">First Name</label>
             <input
                 name="firstName"
+                id="firstName"
                 type="text"
                 // onChange={formik.handleChange}
                 // onBlur={formik.handleBlur}
@@ -35,6 +36,7 @@ const HookForm = () => {
             <label htmlFor="lastName">Last Name</label>
             <input
                 name="lastName"
+                id="lastName"
                 type="text"
                 {...formik.getFieldProps("lastName")}
             />
@@ -47,6 +49,7 @@ const HookForm = () => {
             <label htmlFor="email">Email Address</label>
             <input
                 name="email"
+                id="email"
                 type="email"
                 {...formik.getFieldProps("email")}
             />
