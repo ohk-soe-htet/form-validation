@@ -5,6 +5,7 @@ import HookForm from "./components/Formik/HookForm";
 import CompWithHookForm from "./components/Formik/CompWithHookForm";
 import BasicForm from "./components/ReactHookForm/BasicForm";
 import ResetForm from "./components/ReactHookForm/ResetForm";
+import ErrorForm from "./components/ReactHookForm/ErrorForm";
 
 const App = () => {
     return (
@@ -15,7 +16,8 @@ const App = () => {
             {/* <HookForm /> */}
             {/* <CompWithHookForm /> */}
             {/* <BasicForm /> */}
-            <ResetForm />
+            {/* <ResetForm /> */}
+            <ErrorForm />
         </div>
     );
 };

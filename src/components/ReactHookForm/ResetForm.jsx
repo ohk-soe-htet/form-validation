@@ -9,6 +9,7 @@ const ResetForm = () => {
         register,
         handleSubmit,
         reset,
+        resetField,
         getValues,
         formState,
         formState: { errors },
@@ -72,7 +73,8 @@ const ResetForm = () => {
                 type="button"
                 value="Reset email"
                 onClick={() => {
-                    reset({ ...getValues, email: "" });
+                    // reset({ ...getValues, email: "" });
+                    resetField("email", { keepError: true });
                 }}
             />
         </form>
