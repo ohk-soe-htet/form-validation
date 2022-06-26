@@ -4,7 +4,7 @@ import EmptyDiv from "../UI/EmptyDiv";
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
 
-const BasicForm = () => {
+const HookForm = () => {
     const {
         value: firstNameValue,
         isValid: firstNameIsValid,
@@ -103,4 +103,4 @@ const BasicForm = () => {
     );
 };
 
-export default BasicForm;
+export default HookForm;

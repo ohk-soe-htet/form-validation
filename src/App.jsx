@@ -1,9 +1,10 @@
-import BasicForm from "./components/Native/BasicForm";
+// import HookForm from "./components/Native/HookForm";
 import ReducerForm from "./components/Native/ReducerForm";
 import ComponentForm from "./components/Formik/ComponentForm";
 import HookForm from "./components/Formik/HookForm";
 import CompWithHookForm from "./components/Formik/CompWithHookForm";
-import Basic from "./components/ReactHookForm/Basic";
+import BasicForm from "./components/ReactHookForm/BasicForm";
+import ResetForm from "./components/ReactHookForm/ResetForm";
 
 const App = () => {
     return (
@@ -13,7 +14,8 @@ const App = () => {
             {/* <ComponentForm /> */}
             {/* <HookForm /> */}
             {/* <CompWithHookForm /> */}
-            <Basic />
+            {/* <BasicForm /> */}
+            <ResetForm />
         </div>
     );
 };
