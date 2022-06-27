@@ -25,8 +25,10 @@ const numberSchema = yup.object({
 const ErrorForm = () => {
     const {
         register,
-        formState: { errors },
+        setError,
+        clearErrors,
         handleSubmit,
+        formState: { errors },
     } = useForm({
         defaultValues: {
             name: "",
@@ -67,6 +69,24 @@ const ErrorForm = () => {
             <input type="email" id="email" {...register("email")} />
             {errors.email ? <p>{errors.email.message}</p> : <EmptyDiv />}
             <input type="submit" />
+
+            <input
+                type="button"
+                value="Set Email Error"
+                onClick={() =>
+                    setError(
+                        "email",
+                        { type: "manual", message: "Double Check Again" },
+                        { shouldFocus: true }
+                    )
+                }
+            />
+
+            <input
+                type="button"
+                value="Clear Errors"
+                onClick={() => clearErrors()}
+            />
         </form>
     );
 };
